@@ -15,5 +15,7 @@ OR, you have your own credentials
 **After that, create your database, migrate entities and load fixtures**
 
 `php bin/console doctrine:database:create`
+
 `php bin/console doctrine:migrations:migrate`
+
 `php bin/console doctrine:fixtures:load`
