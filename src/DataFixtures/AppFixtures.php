@@ -126,9 +126,6 @@ class AppFixtures extends Fixture
             }
 
             $manager->persist($beer);
-
-
-
         }
 
         $manager->flush();
