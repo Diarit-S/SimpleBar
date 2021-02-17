@@ -1,16 +1,12 @@
 <nav>
-    <a href="#">The Simple Bar/beers</a>
-    <button  type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span ></span>
-    </button>
     <div id="navbarNav">
         <ul>
             <li class="nav-item">
-                <a class="nav-link  {% if route_name is defined and route_name == 'home' %} active {% endif %}" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link  {% if route_name is defined and route_name == 'home' %} active {% endif %}" href="{{ path('home') }}">Home</a>
             </li>
-            <li class="nav-item">
+            {# <li class="nav-item">
                 <a class="nav-link {% if route_name is defined and route_name == 'beers' %} active {% endif %}" href="{{ path('beers') }}">Beers</a>
-            </li>
+            </li> #}
             <li class="nav-item">
                 <a class="nav-link {% if route_name is defined and route_name == 'mentions' %} active {% endif %}" href="{{ path('mentions') }}">Mentions</a>
             </li>

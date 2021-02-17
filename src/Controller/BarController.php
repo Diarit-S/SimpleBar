@@ -42,23 +42,17 @@ class BarController extends AbstractController
      * @Route("/home", name="home")
      */
     public function home(){
-        return $this->render('home/index.html.twig', [
-            'title' => 'Home',
-        ]);
-    }
-
-    /**
-     * @Route("/beers", name="beers")
-     */
-    public function beers(){
         $repoBeer = $this->getDoctrine()->getRepository(Beer::class);
         $beers = $repoBeer->findLastThreeBeers();
 
-        return $this->render('beers/index.html.twig', [
-            'title' => 'Beers',
-            'beers' => $beers
+        return $this->render('home/index.html.twig', [
+            'lastThreeBeers' => $beers
         ]);
     }
+
+    // /**
+    //  * @Route("/beers", name="beers")
+    //  */
 
      /**
      * @Route("/beer/{id}", name="beer")
@@ -73,10 +67,6 @@ class BarController extends AbstractController
 
         $beerSpecialCategory = $repoCategory->findBeerCategorySpecial($id);
         
-        dump($beer);
-        dump($beerSpecialCategory);
-
-
         return $this->render('beers/beer.html.twig', [
             'title' => 'beer',
             'beer' => $beer,
@@ -114,8 +104,6 @@ class BarController extends AbstractController
 
         $foundCategory = $repoCategory->find($id);
         
-        dump($foundCategory);
-
         return $this->render('category/index.html.twig', [
             'category' => $foundCategory,
             'beers' => $repoBeer->findBeersByCategory($id),
@@ -132,8 +120,6 @@ class BarController extends AbstractController
 
         $foundCountry = $repoCountry->find($id);
         
-        dump($foundCountry);
-
         return $this->render('country/index.html.twig', [
             'country' => $foundCountry,
             'beers' => $repoBeer->findBeersByCountry($id),

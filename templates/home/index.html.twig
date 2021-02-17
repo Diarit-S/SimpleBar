@@ -1,3 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block body %}  
+
+    {% for beer in lastThreeBeers %}
+        <p>{{ beer.name }}</p>
+        <p>{{ beer.description }}</p>
+        <img src="{{ asset('build/images/biere.png') }}" />
+
+    {% endfor %}
+
+{% endblock %}
