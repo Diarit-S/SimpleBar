@@ -3,6 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Beer;
+use App\Entity\Country;
+use App\Entity\Category;
+
+use App\Repository\CategoryRepository;
+
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,11 +52,91 @@ class BarController extends AbstractController
      */
     public function beers(){
         $repoBeer = $this->getDoctrine()->getRepository(Beer::class);
-        $test = $repoBeer->findLastThreeBeers();
+        $beers = $repoBeer->findLastThreeBeers();
 
         return $this->render('beers/index.html.twig', [
             'title' => 'Beers',
-            'test' => $test
+            'beers' => $beers
+        ]);
+    }
+
+     /**
+     * @Route("/beer/{id}", name="beer")
+     */
+    public function showBeer(int $id): Response {
+        $repoBeer = $this->getDoctrine()->getRepository(Beer::class);
+        $beer = $repoBeer->find($id);
+
+        // $repoCountry = $this->getDoctrine()->getRepository(Country::class);
+        // $beerCountry = $repoCountry->find($beer.country)
+        $repoCategory = $this->getDoctrine()->getRepository(Category::class);
+
+        $beerSpecialCategory = $repoCategory->findBeerCategorySpecial($id);
+        
+        dump($beer);
+        dump($beerSpecialCategory);
+
+
+        return $this->render('beers/beer.html.twig', [
+            'title' => 'beer',
+            'beer' => $beer,
+            'specialCategories' => $beerSpecialCategory
+        ]);
+    }
+
+
+    /**
+    * @Route("/menu", name="menu")
+    */
+    public function mainMenu(string $category_id, string $routeName): Response{
+        
+        $repoCategory = $this->getDoctrine()->getRepository(Category::class);
+        $repoCountries = $this->getDoctrine()->getRepository(Country::class);
+        
+        $normalCategories = $repoCategory->findCategoryByTerm('normal');
+        $countries = $repoCountries->findAll();
+
+        return $this->render('partials/menu.html.twig', [
+            'routeName' => $routeName,
+            'categoryId' => $category_id,
+            'categories' => $normalCategories,
+            'countries' => $countries
+        ]);
+    }
+
+    /**
+    * @Route("/category/{id}", name="category")
+    */
+    public function categoryBeers(int $id): Response{
+
+        $repoCategory = $this->getDoctrine()->getRepository(Category::class);
+        $repoBeer = $this->getDoctrine()->getRepository(Beer::class);
+
+        $foundCategory = $repoCategory->find($id);
+        
+        dump($foundCategory);
+
+        return $this->render('category/index.html.twig', [
+            'category' => $foundCategory,
+            'beers' => $repoBeer->findBeersByCategory($id),
+        ]);
+    }
+
+    /**
+    * @Route("/country/{id}", name="country")
+    */
+    public function countryBeers(int $id): Response{
+
+        $repoCountry = $this->getDoctrine()->getRepository(Country::class);
+        $repoBeer = $this->getDoctrine()->getRepository(Beer::class);
+
+        $foundCountry = $repoCountry->find($id);
+        
+        dump($foundCountry);
+
+        return $this->render('country/index.html.twig', [
+            'country' => $foundCountry,
+            'beers' => $repoBeer->findBeersByCountry($id),
         ]);
     }
 }

@@ -14,6 +14,28 @@
             <li class="nav-item">
                 <a class="nav-link {% if route_name is defined and route_name == 'mentions' %} active {% endif %}" href="{{ path('mentions') }}">Mentions</a>
             </li>
+            <ul>
+                {% for category in categories %}
+                <li>
+                <a
+                    href="{{ path('category', { 'id' : category.id })}}"
+                >
+                    {{ category.name }}
+                </a>
+                </li>
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for country in countries %}
+                <li>
+                <a
+                    href="{{ path('country', { 'id' : country.id })}}"
+                >
+                    {{ country.name }}
+                </a>
+                </li>
+                {% endfor %}
+            </ul>
         </ul>
     </div>
 </nav>

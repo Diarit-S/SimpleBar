@@ -19,6 +19,19 @@ class CategoryRepository extends ServiceEntityRepository
         parent::__construct($registry, Category::class);
     }
 
+
+    public function findBeerCategorySpecial(int $id)
+    {
+        return $this->createQueryBuilder('category')
+            ->join('category.beer', 'beer')
+            ->where('beer.id = :id')
+            ->setParameter('id', $id)
+            ->andWhere('category.term = :term')
+            ->setParameter('term', 'special')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Category[] Returns an array of Category objects
     //  */
@@ -36,15 +49,13 @@ class CategoryRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Category
+    public function findCategoryByTerm($value)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+            ->andWhere('c.term = :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
     }
-    */
 }

@@ -4,5 +4,12 @@
 
 {% block body %}
     <img src="{{ asset('build/images/biere.jpg') }}" />
-    <p>{{ test[0].name }}</p>
+    <p>{{ beers[0].name }}</p>
+
+    {% for beer in beers %} 
+        <a href="{{ path('beer', { 'id' : beer.id }) }}">
+            {{ beer.name }}
+        </a>
+    {% endfor %}
+
 {% endblock %}

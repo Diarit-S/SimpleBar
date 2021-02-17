@@ -33,6 +33,36 @@ class BeerRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @param int $id
+     * @return Beer[] Returns Category array.
+    */
+    public function findBeersByCategory(int $id): array
+    {
+
+        return $this
+            ->createQueryBuilder('b')
+            ->join('b.categories', 'c')
+            ->where('c.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findBeersByCountry(int $id): array
+    {
+
+        return $this
+            ->createQueryBuilder('b')
+            ->join('b.country', 'c')
+            ->where('c.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     /*
     public function findOneBySomeField($value): ?Beer
     {

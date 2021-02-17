@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}  
+
+    {% for beer in beers %}
+        <p>{{ beer.name }}</p>
+    {% endfor %}
+
+{% endblock %}

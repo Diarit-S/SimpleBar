@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+    {# <p>{{ beer.name }}</p> #}
+    <p>{{ beer.name }}</p>
+    <p>{{ beer.description }}</p>
+    <p>{{ beer.degree }}</p>
+    <p>{{ beer.price }}</p>
+    
+
+    {% for specialCategory in specialCategories %}
+        <p>{{ specialCategory.name }}</p>
+    {% endfor %}
+
+{% endblock %}
