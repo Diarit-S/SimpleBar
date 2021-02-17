@@ -3,16 +3,23 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
-
+<p class="title_beer_page">{{ beer.name }}</p>
+<div class="wrapper_beer_page"> 
     {# <p>{{ beer.name }}</p> #}
-    <p>{{ beer.name }}</p>
-    <p>{{ beer.description }}</p>
-    <p>{{ beer.degree }}</p>
-    <p>{{ beer.price }}</p>
-    
-
-    {% for specialCategory in specialCategories %}
-        <p>{{ specialCategory.name }}</p>
-    {% endfor %}
-
+    <div class="card_beer_page"> 
+        <div class="beer-image"> 
+            <img src="{{ asset('assets/images/biere.png') }}" class="beer-page__image"/>
+            <p class="degree">{{ beer.degree }}</p>
+        </div>
+        <div class="beer-infos"> 
+            <div class="tags">
+                {% for specialCategory in specialCategories %}
+                    <p class="tag">{{ specialCategory.name }}</p>
+                {% endfor %}
+            </div>
+            <p>{{ beer.description }}</p>
+            <p>{{ beer.price }}</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

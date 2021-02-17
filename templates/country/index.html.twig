@@ -2,8 +2,14 @@
 
 {% block body %}  
 
+   <div class='wrapper'> 
     {% for beer in beers %}
-        <p>{{ beer.name }}</p>
+    <a href="{{ path('beer', { 'id' : beer.id })}}" class="beer-minicard">
+        <p class='text title'> {{ beer.name }}</p>
+        <img src="{{ asset('assets/images/biere.png') }}" class="beer-minicard__image"/>
+        <p class='text'>{{ beer.description }}</p>
+        <p class='text degree'>{{ beer.degree }}</p>
+     </a>
     {% endfor %}
-
+</div>
 {% endblock %}

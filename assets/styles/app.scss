@@ -38,7 +38,7 @@ body {
 
     &__image {
         position: absolute;
-        right: 5rem;
+        right: -7rem;
         top: 0;
         bottom: 0;
         margin: auto;
@@ -51,4 +51,130 @@ body {
     width: 100% !important;
     justify-content: space-around;
     margin: 0 5rem;
+}
+
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    >*{
+        width: 30%;
+    }
+}
+
+.beer-minicard{
+    display: flex;
+    position: relative;
+    flex-direction:column;
+    align-items: center;
+    background-color: white;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    &__image {
+        height: 212px;
+        margin: 10px 0;
+    }
+
+    p{
+        color: #CC3362
+    }
+
+    .degree{
+        display: flex;
+        position: absolute;
+        top: 220px;
+        left: 120px;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        background-color: #79BCB2;
+    }
+
+    .title{
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+}
+
+.wrapper_beer_page{
+    margin-top: 3rem;
+    color: #CC3362;
+    display: flex;
+    justify-content: center;
+    .card_beer_page{
+        border-radius: 8px;
+        display: flex;
+        background-color: white;
+        width: 80vw;
+        height: 400px;
+        .beer-page__image{
+          height: 549px;
+        }   
+    }
+
+    .beer-image {
+        width: 50%;
+        img {
+            position: absolute;
+            top: 135px;
+        }
+
+        .degree{
+            display: flex;
+            position: absolute;
+            bottom: 210px;
+            left: 300px;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            background-color: #79BCB2;
+        }
+    }
+    
+    .tags {
+        display: flex;
+        justify-content: space-around;
+        .tag{
+            background-color: #FAEDF1;
+            color: #CC3362;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+    }
+
+    .beer-infos {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+ 
+}
+
+.title_beer_page{
+    color: #CC3362;
+    font-size: 80px;
+    text-align: right;
+    padding: 0 10vw;
+} 
+
+.bg-light {
+    background-color: transparent !important;
+}
+.nav-link {
+    color: #CC3362 !important;
+}
+.navbar-nav {
+    align-items: center;
+}
+.navbar-brand {
+    height: 5rem;
 }
