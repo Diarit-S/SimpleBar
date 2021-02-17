@@ -1,4 +1,11 @@
-Ecrire les noms
+Maksym Yankivskyy
+Hugues Romain
+Amandine Donat-Filliod
+Nastasia Dotlic
+Gregorio Battaro 
+Louis Zawadka
+Diarit Salihaj
+
 
 **First install dependencies  :**
 
