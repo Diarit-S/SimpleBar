@@ -2,11 +2,19 @@
 
 {% block body %}  
 
-    {% for beer in lastThreeBeers %}
-        <p>{{ beer.name }}</p>
-        <p>{{ beer.description }}</p>
-        <img src="{{ asset('build/images/biere.png') }}" />
+    <div class="home">
+        <img src="{{ asset('assets/images/bar&fun.png') }}"/>
 
-    {% endfor %}
+        {% for beer in lastThreeBeers %}
+            <div class="beer-card">
+                <div class="beer-card__infos">
+                    <h2 class="beer-card__infos__name">{{ beer.name }}</h2>
+                    <p>{{ beer.description }}</p>
+                </div>
+                <img src="{{ asset('assets/images/biere.png') }}" class="beer-card__image"/>
+            </div>
+
+        {% endfor %}
+    </div>
 
 {% endblock %}
