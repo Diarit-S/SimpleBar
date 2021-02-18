@@ -43,3 +43,7 @@ OR, you have your own credentials
 **Shema UML**
 
 ![](https://cdn.discordapp.com/attachments/719464593650483200/811523874700525598/Schema_BDD2x_2.png)
+
+###### **Répoonse à la partie 4**
+
+La fonction `findCatSpecial` permet, à partir de l'ID d'une `beer` de rechercher sur la table `Category` le champs auquel est lié la `beer` en question, en filtrant pour avoir uniquement les categories dont le `term` est `special`
