@@ -1,4 +1,4 @@
- **Membres du groupe 1**
+ **Group 1 members**
  
  - Maksym Yankivskyy 
  - Hugues Romain 
