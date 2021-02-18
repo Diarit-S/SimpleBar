@@ -30,3 +30,10 @@ OR, you have your own credentials
 `php bin/console doctrine:migrations:migrate`
 
 `php bin/console doctrine:fixtures:load`
+
+**Then, run symfony server and watch changes on developmenent**
+
+
+`symfony server:start`
+
+`npm run watch`
