@@ -46,4 +46,4 @@ OR, you have your own credentials
 
 ###### **Répoonse à la partie 4**
 
-La fonction `findCatSpecial` permet, à partir de l'ID d'une `beer` de rechercher sur la table `Category` le champs auquel est lié la `beer` en question, en filtrant pour avoir uniquement les categories dont le `term` est `special`
+La fonction `findCatSpecial` permet, à partir de l'ID d'une `beer` de rechercher sur la table `Category` le ou les champs auquel est lié la `beer` en question, en filtrant pour avoir uniquement les categories dont le `term` est `special`
