@@ -37,3 +37,9 @@ OR, you have your own credentials
 `symfony server:start`
 
 `npm run watch`
+
+
+
+**Shema UML**
+
+![](https://cdn.discordapp.com/attachments/719464593650483200/811523874700525598/Schema_BDD2x_2.png)
