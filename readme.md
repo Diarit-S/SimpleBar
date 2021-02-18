@@ -1,10 +1,12 @@
-Maksym Yankivskyy
-Hugues Romain
-Amandine Donat-Filliod
-Nastasia Dotlic
-Gregorio Battaro 
-Louis Zawadka
-Diarit Salihaj
+ **Membres du groupe 1**
+ 
+ - Maksym Yankivskyy 
+ - Hugues Romain 
+ - Amandine Donat-Filliod 
+ - Nastasia Dotlic 
+ - Gregorio Battaro  
+ - Louis Zawadka 
+ - Diarit Salihaj
 
 
 **First install dependencies  :**
